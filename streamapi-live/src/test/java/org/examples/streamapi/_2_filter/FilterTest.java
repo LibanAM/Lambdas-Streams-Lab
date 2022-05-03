@@ -23,7 +23,7 @@ public class FilterTest {
                 // Now it's time to go back to a List
                 .toList();
 
-        assertEquals(4, filteredPeople.size());
+        assertEquals(5, filteredPeople.size());
     }
 
     @Test
@@ -33,7 +33,7 @@ public class FilterTest {
                 .filter(person -> person.getAge() < 20)
                 .toList();
 
-        assertEquals(4, filteredPeople.size());
+        assertEquals(5, filteredPeople.size());
     }
 
 /*
@@ -47,8 +47,10 @@ public class FilterTest {
     @Test
     void filterRangeAge(){
         List<Person> filteredPeople = PEOPLE.stream()
-                .filter(person -> person.getAge() < 20 && person.getAge() > 30)
+                .filter(person -> person.getAge() < 30 && person.getAge() > 20)
                 .toList();
+
+        assertEquals(7, filteredPeople.size());
     }
 
     @Test
@@ -56,6 +58,8 @@ public class FilterTest {
         List<Person> filteredPeople = PEOPLE.stream()
                 .filter(person -> person.getName().startsWith("Z") && person.getAge() < 20)
                 .toList();
+
+        assertEquals(1, filteredPeople.size());
     }
 
     @Test
@@ -63,6 +67,8 @@ public class FilterTest {
         List<Person> filteredPeople = PEOPLE.stream()
                 .filter(person -> person.getGender().equals(Person.Gender.NON_BINARY) && person.getAge() > 30)
                 .toList();
+
+        assertEquals(2, filteredPeople.size());
     }
 
     @Test

@@ -49,4 +49,6 @@ public class PredicateTest {
 
              - extras: define some predicates in Person class (public static) and use them in the test
          */
+
+
 }

@@ -1,5 +1,7 @@
 package org.examples.streamapi.model;
 
+
+
 public class Person {
     public enum Gender {
         MALE,
@@ -51,4 +53,6 @@ public class Person {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
+
 }

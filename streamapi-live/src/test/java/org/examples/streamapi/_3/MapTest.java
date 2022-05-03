@@ -54,8 +54,15 @@ public class MapTest {
  */
 
     @Test
-    void mapListToIntegersAge(){
-        L
+    void mapListToIntegersAge() {
+        List<Integer> names = PEOPLE
+                .stream()
+                .map(
+                        (person) -> {
+                            return person.getAge();
+                        }
+                )
+                .toList();
     }
 }
 
